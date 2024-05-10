@@ -30,7 +30,7 @@ public class SumOfInteger {
      * The main method, it takes a number through the args and tries to parse it.
      * If the parse fail it return Invalid Input
      * Else it passes the number to sumDigits and print the result.
-     * @param args we exc
+     * @param args the user's input (looking for a number)
      */
     public static void main(String[] args) {
         // try to parse the number from args, a single number so [0] place.
@@ -40,8 +40,8 @@ public class SumOfInteger {
             int result = sumDigits(Math.abs(number));
             System.out.println(result);
 
-            // catching this exception to invalidate an input
-        } catch (NumberFormatException e) {
+            // catching these exceptions to invalidate an input (the args is empty or isn't a number)
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
             System.out.println("Invalid input");
         }
     }
